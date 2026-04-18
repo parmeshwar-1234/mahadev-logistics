@@ -657,14 +657,15 @@ ul {
 
 .pxl-menu-close {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 36px;
+  right: 36px;
   cursor: pointer;
   z-index: 999;
 }
 
 .pxl-menu-close svg {
   display: block;
+  z-index: 999;
 }
 
 .pxl-menu-close:hover svg {
