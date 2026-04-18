@@ -654,3 +654,19 @@ ul {
 .elementor-element-8d921a6 .pxl-button .btn:hover svg path {
   fill: var(--gold) !important;
 }
+
+.pxl-menu-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.pxl-menu-close svg {
+  display: block;
+}
+
+.pxl-menu-close:hover svg {
+  opacity: 0.8;
+}
