@@ -42,11 +42,6 @@ footer#contact .e-child {
 }
 
 
-
-footer#contact a:hover {
-  color: var(--gold) !important;
-}
-
 * {
   margin: 0;
   padding: 0;

@@ -11980,7 +11980,7 @@ body.rtl .pxl-post-list1 li:before {
         -ms-box-shadow: 0 0 15px rgba(0, 0, 0, 8%);
         -o-box-shadow: 0 0 15px rgba(0, 0, 0, 8%);
         box-shadow: 0 0 15px rgba(0, 0, 0, 8%);
-        background-color: #fff;
+        background-color: #000;
         overflow-y: scroll
     }
 
@@ -12056,7 +12056,7 @@ body.rtl .pxl-post-list1 li:before {
     .pxl-menu-primary li.menu-item>a {
         display: block;
         line-height: 46px;
-        color: var(--secondary-color);
+        color: #fff;
         font-size: 15px;
         font-weight: 500;
         border-bottom: 1px solid rgba(0, 0, 0, 6%)
@@ -12068,7 +12068,7 @@ body.rtl .pxl-post-list1 li:before {
     .pxl-menu-primary li.menu-item.current-menu-item>a,
     .pxl-menu-primary li.menu-item.current_page_ancestor>a,
     .pxl-menu-primary li.menu-item.current-menu-ancestor>a {
-        color: var(--primary-color)
+        color: #f2c94c
     }
 
     .pxl-menu-primary .sub-menu,
@@ -12223,7 +12223,7 @@ body.rtl .pxl-post-list1 li:before {
         display: block;
         position: relative;
         z-index: 999;
-        background-color: #fff
+        background-color: #000
     }
 
     #pxl-header-elementor #pxl-header-mobile.style-dark {
@@ -12639,7 +12639,7 @@ body.rtl .pxl-post-list1 li:before {
     right: 0;
     bottom: 0;
     right: 0;
-    background: #000000;
+    background: #fff;
     opacity: 1;
     width: 100%;
     -webkit-border-radius: 3px;
@@ -42395,11 +42395,11 @@ body .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.
     height: 44px;
     line-height: 44px;
     border-radius: 100%;
-    background-color: var(--primary-color);
+    background-color: #f2c94c;
     align-items: center;
     justify-content: center;
     font-size: 16px;
-    color: #fff;
+    color: #000;
     border-radius: 100px
 }
 
@@ -42500,7 +42500,7 @@ body .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.
     width: 5px;
     height: 5px;
     border-radius: 100px;
-    background-color: var(--primary-color)
+    background-color: #f2c94c
 }
 
 .pxl-post-slip1 .pxl-post-image--track .pxl-post-image--block .multi-text li+li {
@@ -46335,7 +46335,7 @@ input[type=submit]:hover {
 .btn:not(.btn-stroke) {
     font-size: 16px;
     font-weight: 500;
-    color: #fff;
+    color: #000;
     padding: 0 64px;
     line-height: 64px;
     border-radius: 8px;
@@ -46352,7 +46352,7 @@ input[type=submit]:hover {
     display: inline-flex;
     align-items: center;
     text-align: center;
-    background-color: var(--primary-color);
+    background-color: #f2c94c;
     justify-content: center;
     overflow: hidden;
     z-index: 1
@@ -46640,7 +46640,7 @@ input[type=submit]:hover {
     top: 0;
     left: 0;
     height: calc(100% - 19px);
-    background-color: var(--primary-color);
+    background-color: #f2c94c;
     -webkit-transition: all .25s cubic-bezier(.645, .045, .355, 1);
     -khtml-transition: all .25s cubic-bezier(.645, .045, .355, 1);
     -moz-transition: all .25s cubic-bezier(.645, .045, .355, 1);
@@ -46656,7 +46656,7 @@ input[type=submit]:hover {
     top: 0;
     right: 0;
     height: 100%;
-    background-color: var(--primary-color);
+    background-color: #f2c94c;
     -webkit-transition: all .25s cubic-bezier(.645, .045, .355, 1);
     -khtml-transition: all .25s cubic-bezier(.645, .045, .355, 1);
     -moz-transition: all .25s cubic-bezier(.645, .045, .355, 1);
@@ -46691,7 +46691,7 @@ input[type=submit]:hover {
     top: 0;
     left: 0;
     height: calc(100% - 19px);
-    background-color: var(--primary-color);
+    background-color: #f2c94c;
     -webkit-transition: all .25s cubic-bezier(.645, .045, .355, 1);
     -khtml-transition: all .25s cubic-bezier(.645, .045, .355, 1);
     -moz-transition: all .25s cubic-bezier(.645, .045, .355, 1);
@@ -46707,7 +46707,7 @@ input[type=submit]:hover {
     top: 0;
     right: 0;
     height: 100%;
-    background-color: var(--primary-color);
+    background-color: #f2c94c;
     -webkit-transition: all .25s cubic-bezier(.645, .045, .355, 1);
     -khtml-transition: all .25s cubic-bezier(.645, .045, .355, 1);
     -moz-transition: all .25s cubic-bezier(.645, .045, .355, 1);
@@ -46785,8 +46785,8 @@ input[type=submit]:hover {
 }
 
 .btn:not(.btn-stroke).two-icon:hover {
-    background-color: var(--primary-color);
-    color: #fff
+    background-color: #f2c94c;
+    color: #000
 }
 
 .btn:not(.btn-stroke).two-icon:hover span {
