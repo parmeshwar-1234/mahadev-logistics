@@ -671,3 +671,51 @@ ul {
 .pxl-menu-close:hover svg {
   opacity: 0.8;
 }
+
+/* Legal & Policy Page Styles */
+.terms-content-section {
+  padding: 100px 0;
+  background-color: #ffffff;
+}
+
+.terms-content-section h2.elementor-heading-title {
+  color: #111111 !important;
+  font-weight: 800 !important;
+  letter-spacing: -1px;
+}
+
+.terms-content-section .elementor-widget-container h4 {
+  color: var(--primary-red) !important;
+  font-weight: 700;
+  margin-bottom: 20px !important;
+}
+
+.terms-content-section .elementor-widget-container h5 {
+  color: #000000 !important;
+  font-weight: 700;
+  margin-top: 35px !important;
+  margin-bottom: 15px !important;
+}
+
+.terms-content-section .elementor-widget-container p,
+.terms-content-section .elementor-widget-container li {
+  color: #444444;
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+.terms-content-section .elementor-widget-container ul {
+  margin-bottom: 30px;
+}
+
+.terms-content-section .btn-default {
+  display: inline-block;
+  transition: var(--transition);
+}
+
+.terms-content-section .btn-default:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
