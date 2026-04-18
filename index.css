@@ -647,12 +647,52 @@ ul {
 
 .elementor-element-8d921a6 .pxl-button .btn:hover .pxl--btn-text,
 .elementor-element-8d921a6 .pxl-button .btn:hover span,
-.elementor-element-8d921a6 .pxl-button .btn:hover i {
-  color: #000000 !important;
-}
-
 .elementor-element-8d921a6 .pxl-button .btn:hover svg path {
   fill: var(--gold) !important;
+}
+
+/* Custom 2-Line Hamburger */
+.custom-2line-hamburger {
+  position: relative;
+  width: 36px;
+  height: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.custom-2line-hamburger span {
+  display: block;
+  height: 2px;
+  background-color: #f2c94c !important;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.custom-2line-hamburger span:nth-child(1) {
+  width: 25px;
+}
+
+.custom-2line-hamburger span:nth-child(2) {
+  width: 18px;
+}
+
+/* Ensure the nav menu background is black */
+.pxl-header-menu,
+.pxl-header-menu-scroll {
+  background-color: #000000 !important;
+}
+
+.pxl-header-menu a,
+.pxl-header-menu span {
+  color: #ffffff !important;
+}
+
+.pxl-header-menu a:hover {
+  color: #f2c94c !important;
 }
 
 .pxl-menu-close {
@@ -672,16 +712,40 @@ ul {
   opacity: 0.8;
 }
 
+/* Minimal Header for Terms Page */
+.pxl-header-minimal {
+  background: #000;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pxl-header-minimal .header-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pxl-header-minimal .logo img {
+  max-height: 50px;
+  width: auto;
+}
+
 /* Legal & Policy Page Styles */
 .terms-content-section {
   padding: 100px 0;
   background-color: #ffffff;
+  padding-top: 20px;
 }
 
 .terms-content-section h2.elementor-heading-title {
   color: #111111 !important;
   font-weight: 800 !important;
   letter-spacing: -1px;
+  text-align: center;
+  margin-bottom: 60px !important;
 }
 
 .terms-content-section .elementor-widget-container h4 {
@@ -702,6 +766,7 @@ ul {
   color: #444444;
   line-height: 1.8;
   font-size: 17px;
+  text-align: justify;
 }
 
 .terms-content-section .elementor-widget-container ul {
@@ -709,13 +774,60 @@ ul {
 }
 
 .terms-content-section .btn-default {
+  background-color: #f2c94c;
+  color: #000000 !important;
+  padding: 15px 35px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 4px;
   display: inline-block;
-  transition: var(--transition);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .terms-content-section .btn-default:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   background-color: #000000 !important;
   color: #ffffff !important;
+}
+
+/* Mobile Responsiveness for Terms Page */
+@media (max-width: 767px) {
+  .terms-content-section {
+    padding: 60px 0;
+  }
+
+  .terms-content-section h2.elementor-heading-title {
+    font-size: 32px !important;
+  }
+
+  .terms-content-section .elementor-widget-container h4 {
+    font-size: 22px;
+  }
+
+  .terms-content-section .elementor-widget-container h5 {
+    font-size: 18px;
+    margin-top: 25px !important;
+  }
+
+  .terms-content-section .elementor-widget-container p,
+  .terms-content-section .elementor-widget-container li {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .back-home-wrap {
+    text-align: center;
+  }
+
+  .terms-content-section .btn-default {
+    width: 100%;
+    padding: 12px 25px;
+    text-align: center;
+  }
 }

@@ -19,6 +19,18 @@
     <meta property="og:url" content="https://mahadevlogistics.com/terms.html">
     <meta name="robots" content="index, follow" />
     <link rel='dns-prefetch' href='https://fonts.googleapis.com/' />
+    <link rel='stylesheet' id='pxl-google-fonts-css' href='https://fonts.googleapis.com/css2' type='text/css'
+        media='all' />
+    <link rel='stylesheet' id='elementor-gf-roboto-css' href='https://fonts.googleapis.com/css' type='text/css'
+        media='all' />
+    <link rel='stylesheet' id='elementor-gf-robotoslab-css' href='https://fonts.googleapis.com/css' type='text/css'
+        media='all' />
+
+    <style id='wp-img-auto-sizes-contain-inline-css' type='text/css'>
+        img:is([sizes=auto i], [sizes^="auto," i]) {
+            contain-intrinsic-size: 3000px 1500px
+        }
+    </style>
     <link rel='stylesheet' id='font-awesome-css'
         href='wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css' type='text/css' media='all' />
     <link rel='stylesheet' id='pxl-main-css-css' href='wp-content/plugins/case-addons/assets/css/pxl-main-css.min.css'
@@ -36,239 +48,319 @@
         href='wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css' type='text/css' media='all' />
     <link rel='stylesheet' id='elementor-frontend-css' href='wp-content/uploads/elementor/css/custom-frontend.min.css'
         type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-post-6-css' href='wp-content/uploads/elementor/css/post-6.css' type='text/css'
+        media='all' />
     <link rel='stylesheet' id='pxl-style-css' href='wp-content/themes/mahadev/assets/css/pxl-style.min.css'
         type='text/css' media='all' />
     <link rel='stylesheet' id='pxl-base-css' href='wp-content/themes/mahadev/pxl-base.min.css' type='text/css'
         media='all' />
+    <link rel='stylesheet' id='pxl-caseicon-css' href='wp-content/themes/mahadev/assets/css/pxl-caseicon.min.css'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='pxl-grid-css' href='wp-content/themes/mahadev/assets/css/pxl-grid.min.css'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-post-8005-css' href='wp-content/uploads/elementor/css/post-8005.css'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-post-7-css' href='wp-content/uploads/elementor/css/post-7.css' type='text/css'
+        media='all' />
+    <link rel='stylesheet' id='elementor-post-6538-css' href='wp-content/uploads/elementor/css/post-6538.css'
+        type='text/css' media='all' />
     <link rel="stylesheet" href="index.css">
+    <style id="pxl-custom-inline-css">
+        .elementor-element-dce5c14 .pxl-item--title {
+            color: #ffffff !important;
+        }
+
+        .elementor-element-7d391e4 .pxl-item--inner p {
+            color: #ffffff !important;
+        }
+
+        .elementor-element-dce5c14:hover .pxl-item--title,
+        .elementor-element-7d391e4:hover .pxl-item--inner p {
+            color: #ffffff !important;
+        }
+
+        /* Logo and Overlay fixes */
+        .pxl-header-logo img,
+        .pxl-logo img,
+        .pxl-item--image img {
+            max-height: 100px !important;
+            width: auto !important;
+        }
+
+        #pxl-header-mobile .pxl-header-logo img {
+            max-height: 60px !important;
+        }
+    </style>
 
     <style>
-        #pxl-main { background-color: #ffffff; }
-        .terms-content-section { padding: 100px 0; }
-        @media (max-width: 767px) { .terms-content-section { padding: 60px 0; } }
+        #pxl-main {
+            background-color: #ffffff;
+            padding-top: 150px;
+            padding-bottom: 100px;
+        }
+
+        /* Sticky Header Fixes */
+        #pxl-header-elementor.is-sticky {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: #000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .elementor-8005 {
+            background: #000;
+        }
+
+        /* Mobile Menu Visibility Fix - Extreme Override */
+        .pxl-header-menu,
+        #pxl-header-mobile .pxl-header-menu {
+            position: fixed !important;
+            top: 0 !important;
+            right: -100% !important;
+            width: 80% !important;
+            max-width: 320px !important;
+            height: 100vh !important;
+            background: #ffffff !important;
+            z-index: 99999 !important;
+            transition: right 0.4s ease !important;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5) !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            display: block !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            transform: none !important;
+        }
+
+        .pxl-header-menu.active,
+        #pxl-header-mobile .pxl-header-menu.active {
+            right: 0 !important;
+        }
+
+        /* Ensure Backdrop is above everything but below menu */
+        .pxl-header-menu-backdrop {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            background: rgba(0, 0, 0, 0.7) !important;
+            z-index: 99998 !important;
+            display: none;
+            cursor: pointer;
+        }
+
+        .pxl-header-menu-backdrop.active {
+            display: block !important;
+        }
+
+        /* Content Visibility */
+        .pxl-header-menu-scroll,
+        .pxl-header-nav,
+        .pxl-menu-primary {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+
+        .pxl-menu-primary li {
+            display: block !important;
+            margin-bottom: 5px;
+        }
+
+        .pxl-menu-primary li a {
+            color: #000000 !important;
+            font-size: 16px !important;
+            font-weight: 600 !important;
+            padding: 12px 15px !important;
+            display: block !important;
+            text-decoration: none !important;
+            border-bottom: 1px solid #eee;
+        }
+
+        .pxl-menu-primary li a:hover {
+            color: #f2c94c !important;
+            background: #f9f9f9;
+        }
+
+        #pxl-header-mobile {
+            z-index: 2000 !important;
+            position: relative !important;
+            background: #ffffff !important;
+        }
+
+        @media screen and (max-width: 1199px) {
+            #pxl-header-mobile {
+                display: block !important;
+            }
+        }
+
+        .pxl-nav-mobile-button {
+            z-index: 2001;
+            position: relative;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .pxl-icon-line {
+            background-color: #f2c94c !important;
+            /* Gold hamburger lines */
+            height: 2px;
+            width: 25px;
+            display: block;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        /* Mobile Menu Content Styles */
+        .pxl-header-menu .pxl-header-nav ul li a {
+            padding: 15px 25px;
+            display: block;
+            border-bottom: 1px solid #eee;
+            color: #000;
+            font-weight: 600;
+        }
+
+        .pxl-menu-close-custom {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100000;
+            background: #000;
+            border-radius: 5px;
+            visibility: visible !important;
+        }
+
+        .pxl-menu-close-custom svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .pxl-logo-mobile {
+            padding: 20px;
+            display: block !important;
+            text-align: center;
+        }
+
+        .pxl-logo-mobile img {
+            max-width: 150px;
+            height: auto;
+        }
+    </style>
+    <style id='pxl-style-inline-css' type='text/css'>
+        :root {
+            --primary-color: #FE000B;
+            --secondary-color: #000000;
+            --third-color: #555555;
+            --fourth-color: #000000;
+            --body_bg-color: #ffffff;
+            --primary-color-rgb: 254, 0, 11;
+            --secondary-color-rgb: 0, 0, 0;
+            --third-color-rgb: 85, 85, 85;
+            --fourth-color-rgb: 0, 0, 0;
+            --body_bg-color-rgb: 255, 255, 255;
+            --gradient-color-from: #FE000B;
+            --gradient-color-to: #000000;
+        }
+    </style>
+    <style id="pxl_theme_options-dynamic-css" title="dynamic-css" class="redux-options-output">
+        #pxl-main {
+            background-color: #ffffff;
+        }
     </style>
 </head>
 
 <body
-    class="wp-singular page-template-default page page-id-8222 wp-theme-carryon theme-carryon woocommerce-no-js pxl-redux-page body-default-font heading-default-font bd-px-header--transparent site-color-gradient woocommerce-layout-grid elementor-default elementor-kit-6 elementor-page elementor-page-8222">
+    class="wp-singular page-template-default page page-id-8222 wp-theme-carryon theme-carryon woocommerce-no-js pxl-redux-page body-default-font heading-default-font site-color-gradient elementor-default elementor-kit-6 elementor-page elementor-page-8222">
     <div id="pxl-wapper" class="pxl-wapper">
-        <header id="pxl-header-elementor" class="is-sticky pxl-header-show">
-            <div class="pxl-header-elementor-main px-header--transparent">
-                <div class="pxl-header-content">
-                    <div class="row">
-                        <div class="col-12"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="pxl-header-elementor-sticky pxl-onepage-sticky pxl-sticky-stb">
-                <div class="pxl-header-content">
+        <main id="pxl-main">
+            <section class="terms-content-section">
+                <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <div data-elementor-type="wp-post" data-elementor-id="8005"
-                                class="elementor elementor-8005">
-                                <div class="elementor-element elementor-element-bcf831b e-con-full e-flex pxl-row-scroll-none pxl-column-none pxl-full-content-with-space-none pxl-container-line-none pxl-container-video-background-none pxl-none overflow-visible e-con e-parent "
-                                    data-id="bcf831b" data-element_type="container" data-e-type="container">
-                                    <div class="elementor-element elementor-element-24c4e33 e-con-full e-flex pxl-row-scroll-none pxl-column-none pxl-full-content-with-space-none pxl-container-line-none pxl-container-video-background-none pxl-none overflow-visible e-con e-child "
-                                        data-id="24c4e33" data-element_type="container" data-e-type="container"
-                                        data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-                                        <div class="elementor-element elementor-element-c84528c elementor-widget__width-auto pxl-none overflow-visible elementor-widget elementor-widget-pxl_logo"
-                                            data-id="c84528c" data-element_type="widget" data-e-type="widget"
-                                            data-widget_type="pxl_logo.default">
-                                            <div class="elementor-widget-container">
-                                                <div class="pxl-logo " data-wow-delay="ms"> <a href="index.html"> <img
-                                                            width="674" height="195"
-                                                            src="wp-content/uploads/2026/02/logo-light-1.webp"
-                                                            class="attachment-full" alt="" loading="eager" /> </a></div>
-                                            </div>
-                                        </div>
-                                        <div class="elementor-element elementor-element-94db873 pxl-none overflow-visible elementor-widget elementor-widget-pxl_menu"
-                                            data-id="94db873" data-element_type="widget" data-e-type="widget"
-                                            data-widget_type="pxl_menu.default">
-                                            <div class="elementor-widget-container">
-                                                <div class="pxl-nav-menu pxl-nav-menu1 pxl-mega-full-width pxl-nav-horizontal fr-style-default show-effect-slideup  sub-style-default"
-                                                    data-wow-delay="ms">
-                                                    <div class="menu-menu-one-page-container">
-                                                        <ul id="menu-menu-one-page" class="pxl-menu-primary clearfix">
-                                                            <li id="menu-item-8224"
-                                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8224">
-                                                                <a href="index.html#"><span
-                                                                        class="pxl-menu-item-text">Home<i
-                                                                            class="caseicon-angle-arrow-down pxl-hide"></i><span
-                                                                            class="pxl-item-menu-icon pxl-hide "></span></span></a>
-                                                            </li>
-                                                            <li id="menu-item-8227"
-                                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8227">
-                                                                <a href="index.html#about"><span
-                                                                        class="pxl-menu-item-text">About<i
-                                                                            class="caseicon-angle-arrow-down pxl-hide"></i><span
-                                                                            class="pxl-item-menu-icon pxl-hide "></span></span></a>
-                                                            </li>
-                                                            <li id="menu-item-8225"
-                                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8225">
-                                                                <a href="index.html#service"><span
-                                                                        class="pxl-menu-item-text">Services<i
-                                                                            class="caseicon-angle-arrow-down pxl-hide"></i><span
-                                                                            class="pxl-item-menu-icon pxl-hide "></span></span></a>
-                                                            </li>
-                                                            <li id="menu-item-8226"
-                                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8226">
-                                                                <a href="index.html#portfolio"><span
-                                                                        class="pxl-menu-item-text">Portfolios<i
-                                                                            class="caseicon-angle-arrow-down pxl-hide"></i><span
-                                                                            class="pxl-item-menu-icon pxl-hide "></span></span></a>
-                                                            </li>
-                                                            <li id="menu-item-8229"
-                                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8229">
-                                                                <a href="index.html#request-quote"><span
-                                                                        class="pxl-menu-item-text">Contact
-                                                                        Us<i
-                                                                            class="caseicon-angle-arrow-down pxl-hide"></i><span
-                                                                            class="pxl-item-menu-icon pxl-hide "></span></span></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="elementor-element elementor-element-06805bc pxl-none overflow-visible elementor-widget elementor-widget-pxl_button"
-                                            data-id="06805bc" data-element_type="widget" data-e-type="widget"
-                                            data-widget_type="pxl_button.default">
-                                            <div class="elementor-widget-container">
-                                                <div id="pxl-pxl_button-06805bc-4498" class="pxl-button pxl-atc-link "
-                                                    data-wow-delay="ms"> <a href="tel:+918928161819"
-                                                        class="btn btn-glossy btn-default  style-icon-3  pxl-icon--right"
-                                                        data-wow-delay="ms" data-target=".pxl-page-popup-template-0">
-                                                        <span class="custom-icon"> <svg
-                                                                xmlns="http://www.w3.org/2000/svg" width="14"
-                                                                height="17" viewBox="0 0 14 17" fill="none">
-                                                                <path
-                                                                    d="M13.7858 9.04574C14.0714 8.74631 14.0714 8.25369 13.7858 7.95426L6.41619 0.226989C6.27801 0.0821023 6.08916 0 5.89571 0H0.736963C0.331633 0 0 0.347727 0 0.772727C0 0.975568 0.0783023 1.17358 0.216483 1.31847L7.06564 8.5L0.216483 15.6815C-0.0690903 15.981 -0.0690903 16.4736 0.216483 16.773C0.354664 16.9179 0.54351 17 0.736963 17H5.89571C6.08916 17 6.27801 16.9179 6.41619 16.773L13.7858 9.04574Z"
-                                                                    fill="white" />
-                                                            </svg> </span> <span class="pxl--btn-text"
-                                                            data-text="Request A Quote"> Request A Quote </span> </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class="elementor-widget-container">
+                                <h2 class="elementor-heading-title">Terms and Conditions</h2>
+
+                                <p><strong>Registered Office:</strong> M-82, APMC Market, Dena Bandar, Sector 19, Vashi,
+                                    Mumbai – 400703.</p>
+
+                                <h4>GCN TERMS AND CONDITIONS</h4>
+                                <p><strong>APPLICABILITY:</strong> The provisions set out and referred to in this Goods
+                                    Consignment Note (GCN) shall apply to all inland transportation including
+                                    Surface/Rail/Air as performed by Mahadev Logistics and its agents.</p>
+
+                                <h5>1. Transportation Rights</h5>
+                                <p>Mahadev Logistics is entitled to use any mode, route, or third party for
+                                    transportation as deemed efficient for the safe delivery of goods.</p>
+
+                                <h5>2. Contractual Agreement</h5>
+                                <p>The GCN constitutes a binding contract between Mahadev Logistics and the Customer
+                                    (Consignor/Consignee).</p>
+
+                                <h5>3. Declarations</h5>
+                                <ul>
+                                    <li>The GCN is issued based on declarations provided by the Customer. Mahadev
+                                        Logistics is not responsible for wrongful declarations.</li>
+                                    <li>Customers declare that consignments do not contain hazardous, inflammable, or
+                                        prohibited articles as per current statutes.</li>
+                                    <li>Differential charges will be collected if discrepancies are found in weight or
+                                        contracted rates.</li>
+                                </ul>
+
+                                <h5>4. Documentation</h5>
+                                <p>Complete documentation, including accurate names, addresses, tax invoices, and
+                                    permits (e-way bills), is mandatory. Mahadev Logistics is not liable for
+                                    deficiencies in customer documentation.</p>
+
+                                <h5>5. Delivery</h5>
+                                <ul>
+                                    <li>The first delivery attempt is considered as deemed delivery.</li>
+                                    <li>Delivery assurances do not apply in cases of force majeure, including accidents,
+                                        natural disasters, strikes, or political disturbances.</li>
+                                    <li>Claims for damage or pilferage will not be entertained after the delivery has
+                                        been accepted outwardly intact.</li>
+                                </ul>
+
+                                <h5>6. Statutory Payments</h5>
+                                <p>The Customer is solely responsible for all government levies, including Octroi, Entry
+                                    Tax, GST, or other statutory duties.</p>
+
+                                <h5>7. Limitation of Liability</h5>
+                                <p>Liability for loss or damage is strictly limited to the actual value of the
+                                    consignment or a maximum of Rs. 1,000, whichever is lower, unless valuation charges
+                                    (Insurance) are paid in advance.</p>
+
+                                <h5>8. Force Majeure</h5>
+                                <p>Mahadev Logistics shall not be liable for loss, damage, or delay caused by acts of
+                                    God, public enemies, government officials, strikes, riots, or any cause beyond
+                                    reasonable control.</p>
+
+                                <h5>9. Payments & Refunds</h5>
+                                <p>Invoices must be cleared within the due date. Delays may attract interest charges.
+                                    Refunds are evaluated on a case-by-case basis.</p>
+
+                                <h5>10. Lien</h5>
+                                <p>Mahadev Logistics reserves the right to a general lien over all consignments for any
+                                    dues payable by the Customer.</p>
+
+                                <div class="back-home-wrap" style="margin-top: 50px; text-align: center;">
+                                    <a href="index.html" class="btn-default">Back to Home</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div id="pxl-header-mobile" class="style-light">
-                <div id="pxl-header-main" class="pxl-header-main">
-                    <div class="container">
-                        <div class="row">
-                            <div class="pxl-header-mobile-default">
-                                <div class="pxl-header-branding"> <a href="index.html" title="Mahadev" rel="home"><img
-                                            src="wp-content/themes/mahadev/assets/img/logo.png" alt="Mahadev" /></a>
-                                </div>
-                                <div id="pxl-nav-mobile">
-                                    <div class="pxl-nav-mobile-button pxl-anchor-divider pxl-cursor--cta"> <span
-                                            class="pxl-icon-line pxl-icon-line1"></span> <span
-                                            class="pxl-icon-line pxl-icon-line2"></span> <span
-                                            class="pxl-icon-line pxl-icon-line3"></span></div>
-                                </div>
-                            </div>
-                            <div class="pxl-header-menu">
-                                <div class="pxl-header-menu-scroll">
-                                    <div class="pxl-menu-close pxl-hide-xl pxl-close">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-                                            viewBox="0 0 24 24" fill="#f2c94c" stroke="#f2c94c" stroke-width="2.5"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <line x1="18" y1="6" x2="6" y2="18"></line>
-                                            <line x1="6" y1="6" x2="18" y2="18"></line>
-                                        </svg>
-                                    </div>
-                                    <div class="pxl-logo-mobile pxl-hide-xl"> <a href="index.html" title="Mahadev"
-                                            rel="home"><img src="wp-content/themes/mahadev/assets/img/logo.png"
-                                                alt="Mahadev" /></a></div>
-                                    <nav class="pxl-header-nav">
-                                        <ul id="menu-menu-one-page-1" class="pxl-menu-primary clearfix">
-                                            <li class="menu-item"><a href="index.html#"><span>Home</span></a></li>
-                                            <li class="menu-item"><a href="index.html#about"><span>About</span></a></li>
-                                            <li class="menu-item"><a href="index.html#service"><span>Services</span></a></li>
-                                            <li class="menu-item"><a href="index.html#portfolio"><span>Portfolios</span></a></li>
-                                            <li class="menu-item"><a href="index.html#request-quote"><span>Contact Us</span></a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                            <div class="pxl-header-menu-backdrop"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <div id="pxl-main">
-            <div class="elementor elementor-8222">
-                <section class="elementor-section elementor-top-section elementor-element elementor-section-boxed terms-content-section" style="background-color: #ffffff;">
-                    <div class="elementor-container elementor-column-gap-default">
-                        <div class="elementor-column elementor-col-100 elementor-top-column">
-                            <div class="elementor-widget-wrap elementor-element-populated">
-                                <div class="elementor-element elementor-widget elementor-widget-heading" data-id="terms-h" data-element_type="widget">
-                                    <div class="elementor-widget-container">
-                                        <h2 class="elementor-heading-title elementor-size-default" style="color: #000; text-align: center; margin-bottom: 50px; font-weight: 700; font-size: 42px;">Terms and Conditions</h2>
-                                    </div>
-                                </div>
-                                <div class="elementor-element elementor-widget elementor-widget-text-editor" data-id="terms-t" data-element_type="widget">
-                                    <div class="elementor-widget-container" style="color: #333; line-height: 1.8; font-size: 16px; max-width: 900px; margin: 0 auto;">
-                                        <p style="margin-bottom: 20px;"><strong>Registered Office:</strong> M-82, APMC Market, Dena Bandar, Sector 19, Vashi, Mumbai – 400703.</p>
-                                        
-                                        <h4 style="color: #f2c94c; margin-top: 40px; font-weight: 700; font-size: 24px; text-transform: uppercase;">GCN TERMS AND CONDITIONS</h4>
-                                        <p style="margin-bottom: 20px;"><strong>APPLICABILITY:</strong> The provisions set out and referred to in this Goods Consignment Note (GCN) shall apply to all inland transportation including Surface/Rail/Air as performed by Mahadev Logistics and its agents.</p>
-                                        
-                                        <h5 style="margin-top: 30px; border-bottom: 2px solid #f2c94c; display: inline-block; padding-bottom: 5px; font-weight: 600; color: #000;">1. Transportation Rights</h5>
-                                        <p style="margin-bottom: 20px;">Mahadev Logistics is entitled to use any mode, route, or third party for transportation as deemed efficient for the safe delivery of goods.</p>
-
-                                        <h5 style="margin-top: 30px; border-bottom: 2px solid #f2c94c; display: inline-block; padding-bottom: 5px; font-weight: 600; color: #000;">2. Contractual Agreement</h5>
-                                        <p style="margin-bottom: 20px;">The GCN constitutes a binding contract between Mahadev Logistics and the Customer (Consignor/Consignee).</p>
-
-                                        <h5 style="margin-top: 30px; border-bottom: 2px solid #f2c94c; display: inline-block; padding-bottom: 5px; font-weight: 600; color: #000;">3. Declarations</h5>
-                                        <ul style="margin-bottom: 20px; padding-left: 20px; list-style-type: disc;">
-                                            <li>The GCN is issued based on declarations provided by the Customer. Mahadev Logistics is not responsible for wrongful declarations.</li>
-                                            <li>Customers declare that consignments do not contain hazardous, inflammable, or prohibited articles as per current statutes.</li>
-                                            <li>Differential charges will be collected if discrepancies are found in weight or contracted rates.</li>
-                                        </ul>
-
-                                        <h5 style="margin-top: 30px; border-bottom: 2px solid #f2c94c; display: inline-block; padding-bottom: 5px; font-weight: 600; color: #000;">4. Documentation</h5>
-                                        <p style="margin-bottom: 20px;">Complete documentation, including accurate names, addresses, tax invoices, and permits (e-way bills), is mandatory. Mahadev Logistics is not liable for deficiencies in customer documentation.</p>
-
-                                        <h5 style="margin-top: 30px; border-bottom: 2px solid #f2c94c; display: inline-block; padding-bottom: 5px; font-weight: 600; color: #000;">5. Delivery</h5>
-                                        <ul style="margin-bottom: 20px; padding-left: 20px; list-style-type: disc;">
-                                            <li>The first delivery attempt is considered as deemed delivery.</li>
-                                            <li>Delivery assurances do not apply in cases of force majeure, including accidents, natural disasters, strikes, or political disturbances.</li>
-                                            <li>Claims for damage or pilferage will not be entertained after the delivery has been accepted outwardly intact.</li>
-                                        </ul>
-
-                                        <h5 style="margin-top: 30px; border-bottom: 2px solid #f2c94c; display: inline-block; padding-bottom: 5px; font-weight: 600; color: #000;">6. Statutory Payments</h5>
-                                        <p style="margin-bottom: 20px;">The Customer is solely responsible for all government levies, including Octroi, Entry Tax, GST, or other statutory duties.</p>
-
-                                        <h5 style="margin-top: 30px; border-bottom: 2px solid #f2c94c; display: inline-block; padding-bottom: 5px; font-weight: 600; color: #000;">7. Limitation of Liability</h5>
-                                        <p style="margin-bottom: 20px;">Liability for loss or damage is strictly limited to the actual value of the consignment or a maximum of Rs. 1,000, whichever is lower, unless valuation charges (Insurance) are paid in advance.</p>
-
-                                        <h5 style="margin-top: 30px; border-bottom: 2px solid #f2c94c; display: inline-block; padding-bottom: 5px; font-weight: 600; color: #000;">8. Force Majeure</h5>
-                                        <p style="margin-bottom: 20px;">Mahadev Logistics shall not be liable for loss, damage, or delay caused by acts of God, public enemies, government officials, strikes, riots, or any cause beyond reasonable control.</p>
-
-                                        <h5 style="margin-top: 30px; border-bottom: 2px solid #f2c94c; display: inline-block; padding-bottom: 5px; font-weight: 600; color: #000;">9. Payments & Refunds</h5>
-                                        <p style="margin-bottom: 20px;">Invoices must be cleared within the due date. Delays may attract interest charges. Refunds are evaluated on a case-by-case basis.</p>
-
-                                        <h5 style="margin-top: 30px; border-bottom: 2px solid #f2c94c; display: inline-block; padding-bottom: 5px; font-weight: 600; color: #000;">10. Lien</h5>
-                                        <p style="margin-bottom: 30px;">Mahadev Logistics reserves the right to a general lien over all consignments for any dues payable by the Customer.</p>
-                                        
-                                        <div style="margin-top: 50px; text-align: center;">
-                                            <a href="index.html" class="btn btn-default" style="background: #f2c94c; color: #000; padding: 15px 40px; text-decoration: none; border-radius: 5px; font-weight: 700; text-transform: uppercase;">Back to Home</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
+            </section>
+        </main>
 
         <footer id="contact" class="pxl-footer-show">
             <div class="footer-elementor-inner">
@@ -285,7 +377,7 @@
                                         data-id="9d93cb3" data-element_type="widget" data-e-type="widget"
                                         data-widget_type="pxl_logo.default">
                                         <div class="elementor-widget-container">
-                                            <div class="pxl-logo " data-wow-delay="ms"> <a href="index.html"> <img width="674"
+                                            <div class="pxl-logo " data-wow-delay="ms"> <a href="#"> <img width="674"
                                                         height="195" src="wp-content/uploads/2026/02/logo-light.webp"
                                                         class="attachment-full" alt="" loading="eager" /> </a></div>
                                         </div>
@@ -300,9 +392,10 @@
                                         <div class="elementor-widget-container">
                                             <div id="pxl-pxl_button-7960d53-5597" class="pxl-button pxl-atc-link "
                                                 data-wow-delay="ms"> <a href="tel:+918928161819"
-                                                    class="btn  full  bg-default  pxl-icon--right" data-wow-delay="ms"> <span class="pxl--btn-text"
-                                                        data-text="Call Us 24/7: +918928161819">
-                                                        Call Us 24/7: +91 89281 61819
+                                                    class="btn  full  bg-default  pxl-icon--right" data-wow-delay="ms"
+                                                    data-target=".pxl-page-popup-template-0"> <span
+                                                        class="pxl--btn-text" data-text="Call Us 24/7: +918928161819 ">
+                                                        Call Us 24/7: +91 89281 61819 
                                                     </span> </a></div>
                                         </div>
                                     </div>
@@ -312,8 +405,9 @@
                                         <div class="elementor-widget-container">
                                             <div id="pxl-pxl_button-3abd1b7-3284" class="pxl-button pxl-atc-link "
                                                 data-wow-delay="ms"> <a href="mailto:mahhadevlogistics23@gmail.com"
-                                                    class="btn  full  bg-default  pxl-icon--left" data-wow-delay="ms"> <span class="pxl--btn-text"
-                                                        data-text="mahhadevlogistics23@gmail.com">
+                                                    class="btn  full  bg-default  pxl-icon--left" data-wow-delay="ms"
+                                                    data-target=".pxl-page-popup-template-0"> <span
+                                                        class="pxl--btn-text" data-text="mahhadevlogistics23@gmail.com">
                                                         mahhadevlogistics23@gmail.com </span> </a></div>
                                         </div>
                                     </div>
@@ -322,9 +416,10 @@
                                         data-widget_type="pxl_button.default">
                                         <div class="elementor-widget-container">
                                             <div id="pxl-pxl_button-7be302b-8928" class="pxl-button pxl-atc-link "
-                                                data-wow-delay="ms"> <a href="https://www.google.com/maps" target="_blank"
-                                                    class="btn  full  bg-default  pxl-icon--left" data-wow-delay="ms"> <span class="pxl--btn-text"
-                                                        data-text="Visit us anytime"> Visit us
+                                                data-wow-delay="ms"> <a href="https://www.google.com/maps"
+                                                    target="_blank" class="btn  full  bg-default  pxl-icon--left"
+                                                    data-wow-delay="ms" data-target=".pxl-page-popup-template-0"> <span
+                                                        class="pxl--btn-text" data-text="Visit us anytime"> Visit us
                                                         anytime </span> </a></div>
                                         </div>
                                     </div>
@@ -344,6 +439,43 @@
                                                         Logistics.</h3>
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="elementor-element elementor-element-ed40f7f elementor-align-left pxl-none overflow-visible elementor-widget elementor-widget-pxl_button"
+                                        data-id="ed40f7f" data-element_type="widget" data-e-type="widget"
+                                        data-widget_type="pxl_button.default">
+                                        <div class="elementor-widget-container">
+                                            <div id="pxl-pxl_button-ed40f7f-2517" class="pxl-button pxl-atc-link "
+                                                data-wow-delay="ms"> <a href="tel:+918928161819"
+                                                    class="btn  btn-default  two-icon  pxl-icon--left"
+                                                    data-wow-delay="ms" data-target=".pxl-page-popup-template-0">
+                                                    <div class="before-button"> <svg xmlns="http://www.w3.org/2000/svg"
+                                                            width="30" height="21" viewBox="0 0 30 21" fill="none">
+                                                            <path
+                                                                d="M30 15C30 18.3137 27.3137 21 24 21H19.4852C17.8939 21 16.3679 20.3679 15.2427 19.2428L0.828676 4.8296C0.298084 4.29904 0 3.57943 0 2.82908C0 1.26662 1.26662 0 2.82908 0H24C27.3137 0 30 2.68629 30 6V15Z"
+                                                                fill="#f2c94c" />
+                                                        </svg></div>
+                                                    <div class="after-button"> <svg xmlns="http://www.w3.org/2000/svg"
+                                                            width="30" height="21" viewBox="0 0 30 21" fill="none">
+                                                            <path
+                                                                d="M30 15C30 18.3137 27.3137 21 24 21H19.4852C17.8939 21 16.3679 20.3679 15.2427 19.2428L0.828676 4.8296C0.298084 4.29904 0 3.57943 0 2.82908C0 1.26662 1.26662 0 2.82908 0H24C27.3137 0 30 2.68629 30 6V15Z"
+                                                                fill="#f2c94c" />
+                                                        </svg></div> <span class="wrap-icon-1 wrap-icon"> <svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="11" height="9"
+                                                            viewBox="0 0 11 9" fill="none">
+                                                            <path
+                                                                d="M9.97801 4.69883L6.32176 8.35508C6.20728 8.46956 6.05201 8.53387 5.89012 8.53387C5.72822 8.53387 5.57296 8.46956 5.45848 8.35508C5.344 8.2406 5.27969 8.08534 5.27969 7.92344C5.27969 7.76154 5.344 7.60628 5.45848 7.4918L8.07422 4.87707H0.609375C0.447759 4.87707 0.292762 4.81287 0.178482 4.69859C0.0642018 4.58431 0 4.42931 0 4.2677C0 4.10608 0.0642018 3.95108 0.178482 3.8368C0.292762 3.72252 0.447759 3.65832 0.609375 3.65832H8.07422L5.45949 1.04207C5.34501 0.927595 5.2807 0.772329 5.2807 0.610432C5.2807 0.448535 5.34501 0.29327 5.45949 0.178791C5.57397 0.0643131 5.72924 1.70586e-09 5.89113 0C6.05303 -1.70586e-09 6.20829 0.0643131 6.32277 0.178791L9.97902 3.83504C10.0358 3.89173 10.0809 3.95909 10.1116 4.03324C10.1423 4.10739 10.1581 4.18688 10.158 4.26715C10.1579 4.34741 10.142 4.42686 10.1111 4.50095C10.0802 4.57503 10.035 4.64228 9.97801 4.69883Z"
+                                                                fill="white"></path>
+                                                        </svg> </span> <span class="pxl--btn-text"
+                                                        data-text="Request a quote"> Request a quote </span> <span
+                                                        class="wrap-icon-2 wrap-icon"> <svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="11" height="9"
+                                                            viewBox="0 0 11 9" fill="none">
+                                                            <path
+                                                                d="M9.97801 4.69883L6.32176 8.35508C6.20728 8.46956 6.05201 8.53387 5.89012 8.53387C5.72822 8.53387 5.57296 8.46956 5.45848 8.35508C5.344 8.2406 5.27969 8.08534 5.27969 7.92344C5.27969 7.76154 5.344 7.60628 5.45848 7.4918L8.07422 4.87707H0.609375C0.447759 4.87707 0.292762 4.81287 0.178482 4.69859C0.0642018 4.58431 0 4.42931 0 4.2677C0 4.10608 0.0642018 3.95108 0.178482 3.8368C0.292762 3.72252 0.447759 3.65832 0.609375 3.65832H8.07422L5.45949 1.04207C5.34501 0.927595 5.2807 0.772329 5.2807 0.610432C5.2807 0.448535 5.34501 0.29327 5.45949 0.178791C5.57397 0.0643131 5.72924 1.70586e-09 5.89113 0C6.05303 -1.70586e-09 6.20829 0.0643131 6.32277 0.178791L9.97902 3.83504C10.0358 3.89173 10.0809 3.95909 10.1116 4.03324C10.1423 4.10739 10.1581 4.18688 10.158 4.26715C10.1579 4.34741 10.142 4.42686 10.1111 4.50095C10.0802 4.57503 10.035 4.64228 9.97801 4.69883Z"
+                                                                fill="white"></path>
+                                                        </svg> </span>
+                                                </a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -369,23 +501,27 @@
                                             data-widget_type="pxl_link.default">
                                             <div class="elementor-widget-container">
                                                 <div class="pxl-link-wrap">
+                                                    <h3 class="pxl-widget-title pxl-empty"></h3>
                                                     <ul id="pxl-link-pxl_link-cf72f1f-7101"
                                                         class="pxl-link pxl-link-l1 style-2 type-vertical">
-                                                        <li class="pxl-item--link"> <a class="" href="index.html#">
+                                                        <li class="pxl-item--link  "> <a class="" href="index.html#">
                                                                 <span>Home</span> </a></li>
-                                                        <li class="pxl-item--link"> <a class="" href="index.html#about">
+                                                        <li class="pxl-item--link  "> <a class=""
+                                                                href="index.html#about">
                                                                 <span>About</span> </a></li>
-                                                        <li class="pxl-item--link"> <a class="" href="index.html#service">
+                                                        <li class="pxl-item--link  "> <a class=""
+                                                                href="index.html#service">
                                                                 <span>Services</span> </a></li>
-                                                        <li class="pxl-item--link"> <a class=""
+                                                        <li class="pxl-item--link  "> <a class=""
                                                                 href="index.html#portfolio">
                                                                 <span>Portfolios</span> </a></li>
-                                                        <li class="pxl-item--link"> <a class="" href="index.html#request-quote">
+                                                        <li class="pxl-item--link  "> <a class="" href="#request-quote">
                                                                 <span>Contact Us</span> </a></li>
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
+
                                     </div>
                                 </div>
                                 <div class="elementor-element elementor-element-361e0b4 e-con-full e-flex pxl-row-scroll-none pxl-column-none pxl-full-content-with-space-none pxl-container-line-none pxl-container-video-background-none pxl-none overflow-visible e-con e-child "
@@ -425,7 +561,7 @@
                                         <div class="elementor-widget-container">
                                             <div class="pxl-text-editor underline ">
                                                 <div class="pxl-item--inner  " data-wow-delay="ms">
-                                                    <p>© 2026 <a href="index.html" target="_blank"
+                                                    <p>© 2026 <a href="#" target="_blank"
                                                             rel="noopener">Mahadev-Logistics</a>. All Rights Reserved.
                                                     </p>
                                                 </div>
@@ -449,45 +585,77 @@
                     </div>
                 </div>
             </div>
-        </footer> <a class="pxl-scroll-top style-default" href="#"> <i
-                class="caseicon-long-arrow-right-three"></i> <svg class="pxl-scroll-progress-circle" width="100%"
-                height="100%" viewBox="-1 -1 102 102">
+        </footer>
+        <a class="pxl-scroll-top style-default" href="index.html#"> <i class="caseicon-long-arrow-right-three"></i> <svg
+                class="pxl-scroll-progress-circle" width="100%" height="100%" viewBox="-1 -1 102 102">
                 <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
             </svg> </a>
-    </div><!-- #wapper -->
+        <div id="pxl-search-popup">
+            <div class="pxl-item--overlay"></div>
+            <div class="pxl-item--logo"> <a href="#" title="Mahadev" rel="home"> <img
+                        src="wp-content/themes/mahadev/assets/img/logo-light.png" alt="Mahadev" class="logo-light" />
+                </a></div>
+            <div class="pxl-item--conent">
+                <div class="pxl-item--close pxl-close"></div>
+                <form role="search" method="get" class="search-form" action="">
+                    <div class="searchform-wrap"> <input type="text" placeholder="Keywords" name="s"
+                            class="search-field" />
+                        <button type="submit" class="search-submit"><svg width="15" height="15" viewBox="0 0 15 15"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.8906 13.5742C14.0273 13.7109 14.0273 13.9297 13.8906 14.0391L13.2617 14.668C13.1523 14.8047 12.9336 14.8047 12.7969 14.668L9.48828 11.3594C9.43359 11.2773 9.40625 11.1953 9.40625 11.1133V10.7578C8.39453 11.6055 7.10938 12.125 5.6875 12.125C2.54297 12.125 0 9.58203 0 6.4375C0 3.32031 2.54297 0.75 5.6875 0.75C8.80469 0.75 11.375 3.32031 11.375 6.4375C11.375 7.85938 10.8281 9.17188 9.98047 10.1562H10.3359C10.418 10.1562 10.5 10.2109 10.582 10.2656L13.8906 13.5742ZM5.6875 10.8125C8.09375 10.8125 10.0625 8.87109 10.0625 6.4375C10.0625 4.03125 8.09375 2.0625 5.6875 2.0625C3.25391 2.0625 1.3125 4.03125 1.3125 6.4375C1.3125 8.87109 3.25391 10.8125 5.6875 10.8125Z"
+                                    fill="#000000" />
+                            </svg> </button>
+                        <div class="pxl--search-divider"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
+    <!-- Scripts from Index -->
     <script type="text/javascript" src="wp-includes/js/jquery/jquery.min.js" id="jquery-core-js"></script>
-    <script type="text/javascript" src="wp-content/uploads/siteground-optimizer-assets/pxl-core-main.min.js" id="pxl-core-main-js"></script>
-    <script type="text/javascript" src="wp-content/plugins/elementor/assets/js/frontend.min.js" id="elementor-frontend-js"></script>
-    <script type="text/javascript" src="wp-content/uploads/siteground-optimizer-assets/pxl-main.min.js" id="pxl-main-js"></script>
+    <script type="text/javascript" src="wp-content/uploads/siteground-optimizer-assets/pxl-core-main.min.js"></script>
+    <script type="text/javascript" src="wp-content/plugins/elementor/assets/js/frontend.min.js"></script>
+    <script type="text/javascript" src="wp-content/uploads/siteground-optimizer-assets/pxl-main.min.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Mobile Menu Toggle
-            const mobileBtn = document.querySelector('.pxl-nav-mobile-button');
-            const mobileMenu = document.querySelector('.pxl-header-menu');
-            const mobileClose = document.querySelector('.pxl-menu-close');
-            const backdrop = document.querySelector('.pxl-header-menu-backdrop');
+            // Search Popup Toggle
+            const searchBtns = document.querySelectorAll('.pxl-search-popup-button');
+            const searchPopup = document.getElementById('pxl-search-popup');
+            const closeBtnSearch = searchPopup ? searchPopup.querySelector('.pxl-close') : null;
 
-            if (mobileBtn && mobileMenu) {
-                mobileBtn.addEventListener('click', function() {
-                    mobileMenu.classList.add('active');
-                    backdrop.classList.add('active');
+            if (searchBtns.length > 0 && searchPopup) {
+                searchBtns.forEach(btn => {
+                    btn.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        searchPopup.classList.add('active');
+                        const input = searchPopup.querySelector('input');
+                        if (input) setTimeout(() => input.focus(), 100);
+                    });
                 });
             }
 
-            if (mobileClose && mobileMenu) {
-                mobileClose.addEventListener('click', function() {
-                    mobileMenu.classList.remove('active');
-                    backdrop.classList.remove('active');
+            if (closeBtnSearch && searchPopup) {
+                closeBtnSearch.addEventListener('click', function () {
+                    searchPopup.classList.remove('active');
                 });
             }
-            
-            if (backdrop && mobileMenu) {
-                backdrop.addEventListener('click', function() {
-                    mobileMenu.classList.remove('active');
-                    backdrop.classList.remove('active');
+
+            if (searchPopup) {
+                searchPopup.addEventListener('click', function (e) {
+                    if (e.target === searchPopup) {
+                        searchPopup.classList.remove('active');
+                    }
                 });
             }
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && searchPopup && searchPopup.classList.contains('active')) {
+                    searchPopup.classList.remove('active');
+                }
+            });
         });
     </script>
 </body>

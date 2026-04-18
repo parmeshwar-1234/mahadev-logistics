@@ -12234,10 +12234,11 @@ body.rtl .pxl-post-list1 li:before {
         background-color: #151a25
     }
 
+    /* 
     #pxl-header-elementor #pxl-header-mobile.style-dark .pxl-nav-mobile-button .pxl-icon-line:after,
     #pxl-header-elementor #pxl-header-mobile.style-dark .pxl-nav-mobile-button .pxl-icon-line:before {
         background-color: #000000
-    }
+    } */
 
     #pxl-header-elementor #pxl-header-mobile.style-dark .pxl-header-menu {
         background-color: #000
@@ -12630,6 +12631,15 @@ body.rtl .pxl-post-list1 li:before {
     right: 0
 }
 
+.pxl-header-main .pxl-anchor-divider .pxl-icon-line:after {
+    background: #000000;
+    color: #fff
+}
+
+.pxl-header-main .pxl-anchor-divider .pxl-icon-line:before {
+    background: #fff !important;
+}
+
 .pxl-header-main .pxl-anchor-divider .pxl-icon-line:before,
 .pxl-header-main .pxl-anchor-divider .pxl-icon-line:after {
     content: '';
@@ -12639,7 +12649,6 @@ body.rtl .pxl-post-list1 li:before {
     right: 0;
     bottom: 0;
     right: 0;
-    background: #fff;
     opacity: 1;
     width: 100%;
     -webkit-border-radius: 3px;
@@ -51223,4 +51232,28 @@ input[type=submit]:hover {
 
 .pxl-pricing1 .pxl-pricing-inner .pxl-item--button:hover {
     background: var(--secondary-color)
+}
+/* Custom Overrides for Mobile Header */
+.pxl-header-menu {
+    background-color: #000000 !important;
+}
+.pxl-icon-line {
+    background-color: #f2c94c !important;
+}
+#pxl-nav-mobile .pxl-icon-line3 {
+    display: none !important;
+}
+#pxl-header-mobile.style-light .pxl-icon-line {
+    background-color: #f2c94c !important;
+}
+
+/* Additional Visibility Fixes for Black Nav Menu */
+.pxl-header-menu .pxl-menu-primary > li > a {
+    color: #ffffff !important;
+}
+.pxl-header-menu .pxl-menu-primary > li > a:hover {
+    color: #f2c94c !important;
+}
+.pxl-header-menu-scroll {
+    background-color: #000000 !important;
 }
