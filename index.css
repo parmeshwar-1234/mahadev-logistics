@@ -673,7 +673,7 @@ ul {
 
 
 /* Form Feedback Styling */
-.wpcf7-response-output {
+.wpcf7-response-output, #custom-form-response {
   display: none;
   font-weight: 600;
   text-align: center;
