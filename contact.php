@@ -1,4 +1,8 @@
 <?php
+// Enable detailed error reporting for debugging (Remove in production)
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 header('Content-Type: application/json');
 
 // Database credentials
@@ -8,11 +12,12 @@ $password = "5ml9bF/ ;*+bV"; // Space included as seen in image
 $dbname = "u433269662_Mahadev";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = @new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
-    die(json_encode(["status" => "error", "message" => "Connection failed: " . $conn->connect_error]));
+    echo json_encode(["status" => "error", "message" => "Connection failed: " . $conn->connect_error]);
+    exit;
 }
 
 // Get form data
