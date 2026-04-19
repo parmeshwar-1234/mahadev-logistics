@@ -12632,7 +12632,7 @@ body.rtl .pxl-post-list1 li:before {
 }
 
 .pxl-header-main .pxl-anchor-divider .pxl-icon-line:after {
-    background: #000000;
+    background: #f2c94c;
     color: #fff
 }
 
@@ -51233,27 +51233,33 @@ input[type=submit]:hover {
 .pxl-pricing1 .pxl-pricing-inner .pxl-item--button:hover {
     background: var(--secondary-color)
 }
-/* Custom Overrides for Mobile Header */
-.pxl-header-menu {
-    background-color: #000000 !important;
+
+.pxl-header-menu,
+.pxl-header-menu-scroll {
+    background-color: #000 !important;
 }
+
 .pxl-icon-line {
     background-color: #f2c94c !important;
 }
-#pxl-nav-mobile .pxl-icon-line3 {
+
+.pxl-icon-line3 {
     display: none !important;
 }
+
 #pxl-header-mobile.style-light .pxl-icon-line {
     background-color: #f2c94c !important;
 }
 
 /* Additional Visibility Fixes for Black Nav Menu */
-.pxl-header-menu .pxl-menu-primary > li > a {
+.pxl-header-menu .pxl-menu-primary>li>a {
     color: #ffffff !important;
 }
-.pxl-header-menu .pxl-menu-primary > li > a:hover {
+
+.pxl-header-menu .pxl-menu-primary>li>a:hover {
     color: #f2c94c !important;
 }
+
 .pxl-header-menu-scroll {
     background-color: #000000 !important;
 }

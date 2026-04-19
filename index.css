@@ -651,33 +651,40 @@ ul {
   fill: var(--gold) !important;
 }
 
-/* Custom 2-Line Hamburger */
-.custom-2line-hamburger {
-  position: relative;
-  width: 36px;
-  height: 26px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 6px;
-  cursor: pointer;
-}
-
-.custom-2line-hamburger span {
-  display: block;
-  height: 2px;
+/* Custom 2-Line Hamburger Restoration */
+.pxl-nav-mobile-button .pxl-icon-line {
   background-color: #f2c94c !important;
-  transition: all 0.3s ease;
-  border-radius: 2px;
+  height: 2px !important;
+  transition: all 0.3s ease !important;
+  display: block !important;
+  position: absolute !important;
+  right: 0 !important;
 }
 
-.custom-2line-hamburger span:nth-child(1) {
-  width: 25px;
+.pxl-nav-mobile-button .pxl-icon-line1 {
+  top: 8px !important;
+  width: 25px !important;
 }
 
-.custom-2line-hamburger span:nth-child(2) {
-  width: 18px;
+.pxl-nav-mobile-button .pxl-icon-line2 {
+  top: 16px !important;
+  width: 18px !important;
+}
+
+.pxl-nav-mobile-button .pxl-icon-line3 {
+  display: none !important; /* Hiding the 3rd line as requested */
+}
+
+/* Open state overrides (if the theme uses .active on the button) */
+.pxl-nav-mobile-button.active .pxl-icon-line1 {
+  transform: rotate(45deg);
+  top: 12px !important;
+  width: 25px !important;
+}
+.pxl-nav-mobile-button.active .pxl-icon-line2 {
+  transform: rotate(-45deg);
+  top: 12px !important;
+  width: 25px !important;
 }
 
 /* Ensure the nav menu background is black */
