@@ -51,7 +51,7 @@ $sql = "INSERT INTO contact_submissions (name, email, phone, dimensions, freight
 VALUES ('$name', '$email', '$phone', '$dimensions', '$freight_type', '$origin', '$destination', '$options')";
 
 // Prepare Email variables (for reuse in retry block)
-$to = "aparmeshwr@gmail.com";
+$to = "mahhadevlogistics23@gmail.com";
 $subject = "New Quote Request from website - Mahadev Logistics";
 $message = '
 <html>
