@@ -6,7 +6,7 @@ ini_set('display_errors', 1);
 header('Content-Type: application/json');
 
 // Database credentials
-$servername = "localhost";
+$servername = "127.0.0.1";
 $username = "u433269662_ML_website";
 $password = "Z5L^d2m~"; // Updated password
 $dbname = "u433269662_Mahadev";
