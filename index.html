@@ -3399,21 +3399,28 @@
                         method: 'POST',
                         body: formData
                     })
-                    .then(response => response.json())
-                    .then(data => {
+                    .then(async response => {
+                        const isJson = response.headers.get('content-type')?.includes('application/json');
+                        const data = isJson ? await response.json() : null;
+                        const text = !isJson ? await response.text() : null;
+
                         if (responseOutput) {
-                            responseOutput.innerText = data.message;
                             responseOutput.style.display = 'block';
                             responseOutput.style.padding = '10px';
                             responseOutput.style.marginTop = '20px';
                             responseOutput.style.border = '2px solid';
-                            if (data.status === 'success') {
-                                responseOutput.style.borderColor = '#46b450'; // Green
+
+                            if (response.ok && data && data.status === 'success') {
+                                responseOutput.innerText = data.message;
+                                responseOutput.style.borderColor = '#46b450';
                                 responseOutput.style.color = '#46b450';
                                 contactForm.reset();
                             } else {
-                                responseOutput.style.borderColor = '#dc3232'; // Red
+                                const errorMsg = data ? data.message : (text || 'Server Error: ' + response.status);
+                                responseOutput.innerText = errorMsg;
+                                responseOutput.style.borderColor = '#dc3232';
                                 responseOutput.style.color = '#dc3232';
+                                console.error('Form Error:', errorMsg);
                             }
                         }
                     })

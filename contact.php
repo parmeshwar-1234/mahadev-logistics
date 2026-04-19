@@ -1,5 +1,5 @@
 <?php
-// Enable detailed error reporting for debugging (Remove in production)
+// Enable detailed error reporting for debugging
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -11,12 +11,23 @@ $username = "u433269662_ML_website";
 $password = "5ml9bF/ ;*+bV"; // Space included as seen in image
 $dbname = "u433269662_Mahadev";
 
+// Check for mysqli extension
+if (!extension_loaded('mysqli')) {
+    echo json_encode(["status" => "error", "message" => "PHP mysqli extension is not enabled on this server."]);
+    exit;
+}
+
+// Prevent mysqli from throwing exceptions (critical for PHP 8.1+)
+if (function_exists('mysqli_report')) {
+    mysqli_report(MYSQLI_REPORT_OFF);
+}
+
 // Create connection
 $conn = @new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
-    echo json_encode(["status" => "error", "message" => "Connection failed: " . $conn->connect_error]);
+    echo json_encode(["status" => "error", "message" => "Database Connection Failed: " . $conn->connect_error]);
     exit;
 }
 
