@@ -2422,7 +2422,9 @@
                                                                                 <div class="row">
                                                                                     <div
                                                                                         class="input-filled col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                                        <label>Name*</label> <span
+                                                                                        <label
+                                                                                            for="your-name-field">Name*</label>
+                                                                                        <span
                                                                                             class="wpcf7-form-control-wrap your-name">
                                                                                             <span
                                                                                                 class="wpcf7-form-control-wrap"
@@ -2432,6 +2434,7 @@
                                                                                                     class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
                                                                                                     aria-required="true"
                                                                                                     aria-invalid="false"
+                                                                                                    id="your-name-field"
                                                                                                     placeholder="Name"
                                                                                                     value="" type="text"
                                                                                                     name="your-name"
@@ -2494,7 +2497,9 @@
                                                                                     </div>
                                                                                     <div
                                                                                         class="input-filled col-xl-6 col-lg-6 col-xs-12 mt15-ctf">
-                                                                                        <label>Freight Type</label>
+                                                                                        <label
+                                                                                            for="your-frieght-field">Freight
+                                                                                            Type</label>
                                                                                         <span
                                                                                             class="wpcf7-form-control-wrap your-frieght">
                                                                                             <span
@@ -2504,6 +2509,7 @@
                                                                                                     maxlength="400"
                                                                                                     class="wpcf7-form-control wpcf7-text"
                                                                                                     aria-invalid="false"
+                                                                                                    id="your-frieght-field"
                                                                                                     placeholder="Freight Type"
                                                                                                     value="" type="text"
                                                                                                     name="your-frieght"
@@ -2656,7 +2662,9 @@
                                                                             </div>
                                                                         </div>
                                                                         <div id="custom-form-response"
-                                                                             aria-hidden="false" style="display:none; text-align:center; font-weight:600; border-radius:5px; background:rgba(255,255,255,0.9);"></div>
+                                                                            aria-hidden="false"
+                                                                            style="display:none; text-align:center; font-weight:600; border-radius:5px; background:rgba(255,255,255,0.9);">
+                                                                        </div>
                                                                     </form>
                                                                 </div>
                                                             </div>
@@ -3120,77 +3128,10 @@
                 </div>
             </div>
         </div>
-        <div id="pxl-search-popup">
-            <div class="pxl-item--overlay"></div>
-            <div class="pxl-item--logo"> <a href="#" title="Mahadev" rel="home"> <img
-                        src="wp-content/themes/mahadev/assets/img/logo-light.png" alt="Mahadev" class="logo-light" />
-                </a></div>
-            <div class="pxl-item--conent">
-                <div class="pxl-item--close pxl-close"></div>
-                <form role="search" method="get" class="search-form" action="">
-                    <div class="searchform-wrap"> <input type="text" placeholder="Keywords" name="s"
-                            class="search-field" />
-                        <button type="submit" class="search-submit"><svg width="15" height="15" viewBox="0 0 15 15"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M13.8906 13.5742C14.0273 13.7109 14.0273 13.9297 13.8906 14.0391L13.2617 14.668C13.1523 14.8047 12.9336 14.8047 12.7969 14.668L9.48828 11.3594C9.43359 11.2773 9.40625 11.1953 9.40625 11.1133V10.7578C8.39453 11.6055 7.10938 12.125 5.6875 12.125C2.54297 12.125 0 9.58203 0 6.4375C0 3.32031 2.54297 0.75 5.6875 0.75C8.80469 0.75 11.375 3.32031 11.375 6.4375C11.375 7.85938 10.8281 9.17188 9.98047 10.1562H10.3359C10.418 10.1562 10.5 10.2109 10.582 10.2656L13.8906 13.5742ZM5.6875 10.8125C8.09375 10.8125 10.0625 8.87109 10.0625 6.4375C10.0625 4.03125 8.09375 2.0625 5.6875 2.0625C3.25391 2.0625 1.3125 4.03125 1.3125 6.4375C1.3125 8.87109 3.25391 10.8125 5.6875 10.8125Z"
-                                    fill="#000000" />
-                            </svg> </button>
-                        <div class="pxl--search-divider"></div>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div id="pxl-cart-sidebar" class="pxl-popup-wrap">
-            <div class="pxl-popup--overlay pxl-cursor--cta"></div>
-            <div class="pxl-popup--conent pxl-widget-cart-sidebar">
-                <div class="widget_shopping_cart">
-                    <div class="widget_shopping_head">
-                        <div class="pxl-item--close pxl-close pxl-cursor--cta"></div>
-                        <div class="widget_shopping_title"> Cart <span class="widget_cart_counter">(0 items)</span>
-                        </div>
-                    </div>
-                    <div class="widget_shopping_cart_content">
-                        <ul class="cart_list product_list_widget">
-                            <li class="empty"> <i class="caseicon-shopping-cart-alt"></i> <span>Your cart is
-                                    empty</span> <a class="btn btn-shop" href="#">Browse Shop</a></li>
-                        </ul><!-- end product list -->
-                    </div>
-                </div>
-            </div>
-        </div>
 
     </div><!-- #wapper -->
     <script
         type="speculationrules"> {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/mahadev/*"},{"not":{"href_matches":["/mahadev/wp-*.php","/mahadev/wp-admin/*","/mahadev/wp-content/uploads/*","/mahadev/wp-content/*","/mahadev/wp-content/plugins/*","/mahadev/wp-content/themes/mahadev/*","/mahadev/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]} </script>
-    <div id="woosw_wishlist" class="woosw-popup woosw-popup-center"></div>
-    <script type="text/javascript"> jQuery(function ($) {
-            if (typeof wc_add_to_cart_params === 'undefined') {
-                return false;
-            }
-            $(document.body).on('added_to_cart', function (event, fragments, cart_hash, $button) {
-                var $pid = $button.data('product_id');
-                $.ajax({
-                    type: 'POST',
-                    url: wc_add_to_cart_params.ajax_url,
-                    data: {
-                        'action': 'item_added',
-                        'id': $pid
-                    },
-                    success: function (response) {
-                        $('#pxl-cart-sidebar').addClass('active');
-                        $("body").addClass('body-overflow');
-                        if (fragments && fragments['span.pxl_cart_counter']) {
-                            $('.pxl_cart_counter').html($(fragments['span.pxl_cart_counter']).html());
-                        }
-                        $("#pxl-cart-sidebar .pxl-item--close").on('click', function () {
-                            $('body').removeClass('body-overflow');
-                            $('#pxl-cart-sidebar').removeClass('active');
-                        });
-                    }
-                });
-            });
-        }); </script>
     <script type='text/javascript'> (function () {
             var c = document.body.className;
             c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
@@ -3301,21 +3242,6 @@
         id="pxl-one-page-js"></script>
     <script type="text/javascript" src="wp-content/themes/mahadev/elements/widgets/js/accordion.js"
         id="mahadev-accordion-js"></script>
-    <script type="text/javascript" src="wp-content/themes/mahadev/assets/js/libs/js.cookie.min.js"
-        id="js-cookie-js"></script>
-    <script type="text/javascript"
-        src="wp-content/plugins/woo-smart-wishlist/assets/libs/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"
-        id="perfect-scrollbar-js"></script>
-    <script type="text/javascript" id="woosw-frontend-js-extra"> /* <![CDATA[ */
-        var woosw_vars = { "wc_ajax_url": "?wc-ajax=%%endpoint%%", "nonce": "579d46cc8b", "added_to_cart": "no", "auto_remove": "no", "page_myaccount": "yes", "menu_action": "open_page", "reload_count": "no", "perfect_scrollbar": "yes", "wishlist_url": "wishlist/", "button_action": "list", "message_position": "right-top", "button_action_added": "popup", "empty_confirm": "This action cannot be undone. Are you sure?", "delete_confirm": "This action cannot be undone. Are you sure?", "copied_text": "Copied the wishlist link:", "menu_text": "Wishlist", "button_text": "Add to wishlist", "button_text_added": "Browse wishlist", "button_normal_icon": "woosw-icon-5", "button_added_icon": "woosw-icon-8", "button_loading_icon": "woosw-icon-4" };
-        //# sourceURL=woosw-frontend-js-extra
-        /* ]]> */</script>
-    <script type="text/javascript" src="wp-content/uploads/siteground-optimizer-assets/woosw-frontend.min.js"
-        id="woosw-frontend-js"></script>
-    <script type="text/javascript" src="wp-content/uploads/siteground-optimizer-assets/pxl-woocommerce.min.js"
-        id="pxl-woocommerce-js"></script>
-    <script type="text/javascript" src="wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js"
-        id="sourcebuster-js-js"></script>
     <script type="text/javascript" id="wc-order-attribution-js-extra"> /* <![CDATA[ */
         var wc_order_attribution = { "params": { "lifetime": 1.0000000000000000818030539140313095458623138256371021270751953125e-5, "session": 30, "base64": false, "ajaxurl": "wp-admin/admin-ajax.php", "prefix": "wc_order_attribution_", "allowTracking": true }, "fields": { "source_type": "current.typ", "referrer": "current_add.rf", "utm_campaign": "current.cmp", "utm_source": "current.src", "utm_medium": "current.mdm", "utm_content": "current.cnt", "utm_id": "current.id", "utm_term": "current.trm", "utm_source_platform": "current.plt", "utm_creative_format": "current.fmt", "utm_marketing_tactic": "current.tct", "session_entry": "current_add.ep", "session_start_time": "current_add.fd", "session_pages": "session.pgs", "session_count": "udata.vst", "user_agent": "udata.uag" } };
         //# sourceURL=wc-order-attribution-js-extra
