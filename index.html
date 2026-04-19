@@ -2436,7 +2436,7 @@
                                                                                                     aria-invalid="false"
                                                                                                     placeholder="Name"
                                                                                                     value="" type="text"
-                                                                                                    name="your-name" /></span>
+                                                                                                    name="your-name" required /></span>
                                                                                         </span>
                                                                                     </div>
                                                                                     <div
@@ -2454,7 +2454,7 @@
                                                                                                     placeholder="Email*"
                                                                                                     value=""
                                                                                                     type="email"
-                                                                                                    name="your-email" /></span>
+                                                                                                    name="your-email" required /></span>
                                                                                         </span>
                                                                                     </div>
                                                                                     <div
@@ -2471,7 +2471,7 @@
                                                                                                     aria-invalid="false"
                                                                                                     placeholder="Phone Number*"
                                                                                                     value="" type="tel"
-                                                                                                    name="your-phone" /></span>
+                                                                                                    name="your-phone" required /></span>
                                                                                         </span>
                                                                                     </div>
                                                                                     <div
@@ -2487,7 +2487,7 @@
                                                                                                     aria-required="true"
                                                                                                     aria-invalid="false"
                                                                                                     placeholder="Dimensions (L × W × H)"
-                                                                                                    value="" type="tel"
+                                                                                                    value="" type="text"
                                                                                                     name="your-dimensions" /></span>
                                                                                         </span>
                                                                                     </div>
@@ -2498,19 +2498,14 @@
                                                                                             class="wpcf7-form-control-wrap your-frieght">
                                                                                             <span
                                                                                                 class="wpcf7-form-control-wrap"
-                                                                                                data-name="your-frieght"><select
-                                                                                                    class="wpcf7-form-control wpcf7-select"
+                                                                                                data-name="your-frieght"><input
+                                                                                                    size="40"
+                                                                                                    maxlength="400"
+                                                                                                    class="wpcf7-form-control wpcf7-text"
                                                                                                     aria-invalid="false"
-                                                                                                    name="your-frieght">
-                                                                                                    <option
-                                                                                                        value="Truck Freight">
-                                                                                                        Truck Freight
-                                                                                                    </option>
-                                                                                                    <option
-                                                                                                        value="Air Freight">
-                                                                                                        Air Freight
-                                                                                                    </option>
-                                                                                                </select></span> </span>
+                                                                                                    placeholder="Freight Type"
+                                                                                                    value="" type="text"
+                                                                                                    name="your-frieght" required /></span> </span>
                                                                                     </div>
                                                                                     <div
                                                                                         class="input-filled col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
@@ -2526,7 +2521,7 @@
                                                                                                     aria-invalid="false"
                                                                                                     placeholder="Origin Location"
                                                                                                     value="" type="text"
-                                                                                                    name="your-origin-location" /></span>
+                                                                                                    name="your-origin-location" required /></span>
                                                                                         </span>
                                                                                     </div>
                                                                                     <div
@@ -2543,7 +2538,7 @@
                                                                                                     aria-invalid="false"
                                                                                                     placeholder="Destination Location"
                                                                                                     value="" type="text"
-                                                                                                    name="your-destination-location" /></span>
+                                                                                                    name="your-destination-location" required /></span>
                                                                                         </span>
                                                                                     </div>
                                                                                     <div class="input-filled col-xl-12">
@@ -3120,7 +3115,6 @@
                 </div>
             </div>
         </div>
-    </div>
     <div id="pxl-search-popup">
         <div class="pxl-item--overlay"></div>
         <div class="pxl-item--logo"> <a href="#" title="Mahadev" rel="home"> <img
@@ -3423,7 +3417,14 @@
                                 responseOutput.style.color = '#dc3232';
                                 console.error('Form Error:', errorMsg);
                             }
+                            
+                            // Scroll to response message
+                            responseOutput.scrollIntoView({ behavior: 'smooth', block: 'center' });
                         }
+                        
+                        // Reset button
+                        if (btnText) btnText.innerText = originalBtnText;
+                        if (submitBtn) submitBtn.disabled = false;
                     })
                     .catch(error => {
                         if (responseOutput) {
@@ -3434,9 +3435,9 @@
                             responseOutput.style.border = '2px solid';
                             responseOutput.style.borderColor = '#dc3232';
                             responseOutput.style.color = '#dc3232';
+                            responseOutput.scrollIntoView({ behavior: 'smooth', block: 'center' });
                         }
-                    })
-                    .finally(() => {
+                        // Reset button
                         if (btnText) btnText.innerText = originalBtnText;
                         if (submitBtn) submitBtn.disabled = false;
                     });
