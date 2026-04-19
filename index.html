@@ -3401,21 +3401,30 @@
 
                         if (responseOutput) {
                             responseOutput.style.display = 'block';
-                            responseOutput.style.padding = '10px';
+                            responseOutput.style.visibility = 'visible';
+                            responseOutput.style.opacity = '1';
+                            responseOutput.style.padding = '15px';
                             responseOutput.style.marginTop = '20px';
                             responseOutput.style.border = '2px solid';
+                            responseOutput.style.lineHeight = '1.5';
+                            responseOutput.style.minHeight = 'auto';
 
                             if (response.ok && data && data.status === 'success') {
-                                responseOutput.innerText = data.message;
+                                const successMsg = data.message || 'Thank you! Your message has been sent.';
+                                responseOutput.innerHTML = '<strong>' + successMsg + '</strong>';
                                 responseOutput.style.borderColor = '#46b450';
                                 responseOutput.style.color = '#46b450';
+                                responseOutput.style.fontSize = '16px';
+                                responseOutput.style.textAlign = 'center';
                                 contactForm.reset();
                             } else {
                                 const errorMsg = data ? data.message : (text || 'Server Error: ' + response.status);
-                                responseOutput.innerText = errorMsg;
+                                responseOutput.innerHTML = '<strong>' + errorMsg + '</strong>';
                                 responseOutput.style.borderColor = '#dc3232';
                                 responseOutput.style.color = '#dc3232';
-                                console.error('Form Error:', errorMsg);
+                                responseOutput.style.fontSize = '16px';
+                                responseOutput.style.textAlign = 'center';
+                                console.error('Form Error Details:', {status: response.status, data, text});
                             }
                             
                             // Scroll to response message
