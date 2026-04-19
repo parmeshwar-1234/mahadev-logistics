@@ -21,6 +21,9 @@ if (function_exists('mysqli_report')) {
     mysqli_report(MYSQLI_REPORT_OFF);
 }
 
+// Set timezone to IST
+date_default_timezone_set('Asia/Kolkata');
+
 // Create connection
 $conn = @new mysqli($servername, $username, $password, $dbname);
 
@@ -29,6 +32,9 @@ if ($conn->connect_error) {
     echo json_encode(["status" => "error", "message" => "Database Connection Failed: " . $conn->connect_error]);
     exit;
 }
+
+// Set MySQL session time zone to IST
+$conn->query("SET time_zone = '+05:30'");
 
 // Get form data
 $name = isset($_POST['your-name']) ? $conn->real_escape_string($_POST['your-name']) : '';
