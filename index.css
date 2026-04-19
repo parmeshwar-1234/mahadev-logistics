@@ -672,7 +672,8 @@ ul {
 }
 
 .pxl-nav-mobile-button .pxl-icon-line3 {
-  display: none !important; /* Hiding the 3rd line as requested */
+  display: none !important;
+  /* Hiding the 3rd line as requested */
 }
 
 /* Open state overrides (if the theme uses .active on the button) */
@@ -681,6 +682,7 @@ ul {
   top: 12px !important;
   width: 25px !important;
 }
+
 .pxl-nav-mobile-button.active .pxl-icon-line2 {
   transform: rotate(-45deg);
   top: 12px !important;
