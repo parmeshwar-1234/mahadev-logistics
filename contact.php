@@ -45,7 +45,32 @@ $sql = "INSERT INTO contact_submissions (name, email, phone, dimensions, freight
 VALUES ('$name', '$email', '$phone', '$dimensions', '$freight_type', '$origin', '$destination', '$options')";
 
 if ($conn->query($sql) === TRUE) {
-    echo json_encode(["status" => "success", "message" => "Thank you! Your message has been sent."]);
+    // Send Email Notification
+    $to = "aparmeshwr@gmail.com";
+    $subject = "New Quote Request - Mahadev Logistics";
+    
+    $message = "You have received a new quote request from your website.\n\n";
+    $message .= "Details:\n";
+    $message .= "---------------------------\n";
+    $message .= "Name: $name\n";
+    $message .= "Email: $email\n";
+    $message .= "Phone: $phone\n";
+    $message .= "Freight Type: $freight_type\n";
+    $message .= "Dimensions: $dimensions\n";
+    $message .= "Origin: $origin\n";
+    $message .= "Destination: $destination\n";
+    $message .= "Logistics Options: $options\n";
+    $message .= "---------------------------\n";
+    $message .= "Time: " . date("Y-m-d H:i:s") . "\n";
+    
+    $headers = "From: info@mahadevlogistic.com\r\n";
+    $headers .= "Reply-To: $email\r\n";
+    $headers .= "X-Mailer: PHP/" . phpversion();
+    
+    // Attempt to send mail but don't block success response
+    @mail($to, $subject, $message, $headers);
+
+    echo json_encode(["status" => "success", "message" => "Thank you! Your response has been submitted, Our team will contact you soon."]);
 } else {
     // If the table doesn't exist, try to create it and retry
     if ($conn->errno == 1146) {
@@ -64,7 +89,9 @@ if ($conn->query($sql) === TRUE) {
         if ($conn->query($createTable) === TRUE) {
             // Retry insertion
             if ($conn->query($sql) === TRUE) {
-                echo json_encode(["status" => "success", "message" => "Thank you! Your message has been sent."]);
+                // Also send mail in retry case
+                @mail($to, $subject, $message, $headers);
+                echo json_encode(["status" => "success", "message" => "Thank you! Your response has been submitted, Our team will contact you soon."]);
             } else {
                 echo json_encode(["status" => "error", "message" => "Error: " . $conn->error]);
             }
