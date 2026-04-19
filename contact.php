@@ -8,7 +8,7 @@ header('Content-Type: application/json');
 // Database credentials
 $servername = "localhost";
 $username = "u433269662_ML_website";
-$password = "5ml9bF/ ;*+bV"; // Space included as seen in image
+$password = "5ml9bF/;*+bV"; // Removed space to test connection
 $dbname = "u433269662_Mahadev";
 
 // Check for mysqli extension

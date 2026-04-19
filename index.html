@@ -3384,6 +3384,7 @@
             if (contactForm) {
                 contactForm.addEventListener('submit', function (e) {
                     e.preventDefault();
+                    e.stopImmediatePropagation();
                     
                     const responseOutput = document.querySelector('.wpcf7-response-output');
                     const submitBtn = contactForm.querySelector('button[type="submit"]');
