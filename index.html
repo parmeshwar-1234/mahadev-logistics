@@ -3378,6 +3378,62 @@
                     searchPopup.classList.remove('active');
                 }
             });
+
+            // AJAX Form Submission
+            const contactForm = document.querySelector('.wpcf7-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    
+                    const responseOutput = document.querySelector('.wpcf7-response-output');
+                    const submitBtn = contactForm.querySelector('button[type="submit"]');
+                    const btnText = submitBtn ? submitBtn.querySelector('.pxl--btn-text') : null;
+                    const originalBtnText = btnText ? btnText.innerText : 'Request a quote';
+
+                    if (btnText) btnText.innerText = 'Sending...';
+                    if (submitBtn) submitBtn.disabled = true;
+
+                    const formData = new FormData(contactForm);
+
+                    fetch('contact.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (responseOutput) {
+                            responseOutput.innerText = data.message;
+                            responseOutput.style.display = 'block';
+                            responseOutput.style.padding = '10px';
+                            responseOutput.style.marginTop = '20px';
+                            responseOutput.style.border = '2px solid';
+                            if (data.status === 'success') {
+                                responseOutput.style.borderColor = '#46b450'; // Green
+                                responseOutput.style.color = '#46b450';
+                                contactForm.reset();
+                            } else {
+                                responseOutput.style.borderColor = '#dc3232'; // Red
+                                responseOutput.style.color = '#dc3232';
+                            }
+                        }
+                    })
+                    .catch(error => {
+                        if (responseOutput) {
+                            responseOutput.innerText = 'Something went wrong. Please try again later.';
+                            responseOutput.style.display = 'block';
+                            responseOutput.style.padding = '10px';
+                            responseOutput.style.marginTop = '20px';
+                            responseOutput.style.border = '2px solid';
+                            responseOutput.style.borderColor = '#dc3232';
+                            responseOutput.style.color = '#dc3232';
+                        }
+                    })
+                    .finally(() => {
+                        if (btnText) btnText.innerText = originalBtnText;
+                        if (submitBtn) submitBtn.disabled = false;
+                    });
+                });
+            }
         });
     </script>
 </body>
